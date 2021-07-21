@@ -60,6 +60,11 @@ chrome.storage.sync.get([TIME_END], function (result) {
   document.querySelector("#time-end").value = result[TIME_END] || "17:30";
 });
 
+chrome.storage.sync.get(["email", "password"], function (result) {
+  document.querySelector("#email").value = result.email || "";
+  document.querySelector("#password").value = result.password || "";
+});
+
 function setDayOfWeek(day_of_week_selected) {
   for (const day of day_of_week_selected) {
     const inputElm = document.querySelector(`input[data-index="${day}"]`);
@@ -68,9 +73,17 @@ function setDayOfWeek(day_of_week_selected) {
 }
 
 document.querySelector("#btn-save").addEventListener("click", function () {
-  if (!timeStartFormat.masked.isComplete || timeEndFormat.masked.isComplete) {
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+  if (!email || !password) {
+    document.querySelector("#message").textContent = "Nhập email, password đi?";
+    return;
+  }
+
+  if (!timeStartFormat.masked.isComplete || !timeEndFormat.masked.isComplete) {
     document.querySelector("#message").textContent =
       "Nhập thời gian đúng vào nào?";
+    return;
   }
   const inputElms = document.querySelectorAll(`input[data-index]`);
   const new_day_of_week_selected = [];
@@ -96,6 +109,14 @@ document.querySelector("#btn-save").addEventListener("click", function () {
   });
 
   chrome.storage.sync.set({ [TIME_END]: time_end }, function () {
+    console.log(`${TIME_END} updated`);
+  });
+
+  chrome.storage.sync.set({ email: email }, function () {
+    console.log(`${TIME_END} updated`);
+  });
+
+  chrome.storage.sync.set({ password: password }, function () {
     console.log(`${TIME_END} updated`);
   });
 });

@@ -34,8 +34,11 @@ setInterval(() => {
         (current_now.indexOf(`${time_start}:00`) !== -1 ||
           current_now.indexOf(`${time_end}:00`) !== -1)
       ) {
+        chrome.storage.sync.set({ auto: 1 }, function (e) {
+          console.log(e);
+        });
         chrome.tabs.create(
-          { url: "https://checkin.runsystem.info"},
+          { url: "https://checkin.runsystem.info" },
           function (a) {
             console.log(a);
           }
