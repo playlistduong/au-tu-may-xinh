@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="css/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="popup">
+        <div class="edge-header deep-purple"></div>
+        <h3 class="text-success mb-3">Âu tu mây xình</h3>
+        <h4>Thời gian:</h4>
+        <div class="input-group time mb-3">
+            <input type="text" class="regexp-mask" id="time-start" value="08:00" class="form-control"
+                placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            &nbsp; - &nbsp;
+            <input type="text" class="regexp-mask" id="time-end" value="17:30" class="form-control"
+                placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div id="message" class="text-danger mt-2 mb-2"></div>
+        <h4>Áp dụng cho:</h4>
+        <div class="form-check">
+            <input class="form-check-input" data-index="0" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Thứ 2
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" data-index="1" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Thứ 3
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" data-index="2" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Thứ 4
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" data-index="3" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Thứ 5
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" data-index="4" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Thứ 6
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" data-index="5" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Thứ 7
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" data-index="6" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">
+                Chủ Nhật
+            </label>
+        </div>
+        <div class="mt-2">
+            <button type="button" class="btn btn-primary" id="btn-save">Húp</button>
+            <button class="btn" id="btn-close">Đóng</button>
+
+        </div>
+
+        <div class="alert alert-primary mt-3" id="remain-time"><span></span></div>
+    </div>
+    <script type="text/javascript" src="js/imask.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
